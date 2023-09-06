@@ -1,0 +1,169 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Rubik', Cambria;
+    font-size: 1.25em;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    border-radius: 1em;
+    display: flex;
+    align-self: center;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    min-width: 55%;
+    max-width: 70%;
+    padding: 1%;
+    flex-direction: column;
+}
+
+#page[data-theme="dark"] .card {
+    border: solid 2px #c0c0c0;
+}
+
+#page[data-theme="light"] .card {
+    border: solid 2px #333333;
+}
+
+h1 {
+    text-align: center;
+    font-weight: normal;
+    margin-top: 0;
+    border-bottom: 1px solid #597387;
+    width: fit-content;
+}
+
+#page[data-theme="dark"] h1 {
+    border-bottom: 1px solid #597387;
+}
+
+#page[data-theme="light"] h1 {
+    border-bottom: 1px solid #D3D3D3;
+}
+
+p {
+    margin: 0;
+}
+
+.vertical-flex {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    justify-content: space-around;
+    margin-bottom: 2%;
+    padding: 1%;
+    width: 40%;
+}
+
+.image-box {
+    width: fit-content;
+    padding: 0;
+}
+
+#page[data-theme="dark"] .vertical-flex {
+    border: solid 1px #597387;
+}
+
+#page[data-theme="light"] .vertical-flex {
+    border: solid 1px #D3D3D3;
+}
+
+#links {
+    padding-left: 2%;
+    max-width: 60%;
+}
+
+.horizontal-flex {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#page[data-theme="dark"] {
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #333333 0%, #958e69 74%);
+    color: #FFFFFF;
+}
+
+#page[data-theme="light"] {
+    background-color: #FFFFFF;
+    background-image: linear-gradient(315deg, #EEEEEE 0%, #958e69 74%);
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+}
+
+#page[data-theme="light"] a {
+    color: black;
+}
+
+#page[data-theme="dark"] a {
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    border-radius: .25em;
+    font-family: 'Rubik', Cambria;
+    font-size: 1.25em;
+    width: fit-content;
+    margin: 1% auto;
+}
+
+button:hover {
+    cursor: pointer;
+    filter: brightness(85%);
+}
+
+#page[data-theme="dark"] button {
+    border: solid 2px #c0c0c0;
+    color: white;
+    background-color: #333333;
+}
+
+#page[data-theme="light"] button {
+    border: solid 2px #333333;
+    color: black;
+    background-color: #c0c0c0;
+}
+
+#my-data {
+    display: flex;
+    flex-direction: column;
+}
+
+#silas {
+    margin-bottom: 2%;
+}
+
+#page[data-theme="dark"] #silas {
+    border: solid 1px #597387;
+}
+
+#page[data-theme="light"] #silas {
+    border: solid 1px #D3D3D3;
+}

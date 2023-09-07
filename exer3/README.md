@@ -21,7 +21,7 @@ Like the Figma design, your webpage will consist of two pages, both (hopefully) 
 - Include some color
 - Include at least one image
 - Your project must include all of the design elements contained within the Figma design (e.g. a banner at the top, a vertically and horizontally centered search bar, a footer, etc.)
-- You must make **at least 8 commits** for this webpage (this is to get you in the habit of committing each feature incrementally)
+- (Optional, but heavily recommended) Try to make **at least 8 commits** for this webpage (this is to get you in the habit of committing each feature incrementally)
 - (Optional) Style the webpage with your personal touch! The Figma design provided is solely meant to serve as a barebones template.
 
 **Submission Instructions**

@@ -3,7 +3,9 @@
  */
 
 /**
- * Task 1: Create a function that takes a number and return the letter grade (as a string) corresponding to it
+ * Task 1: Create a function that takes an integer as input and returns the 
+ * letter grade (as a string) corresponding to it. Return "INVALID" if the 
+ * integer is outside the range [0, 100].
  * 
  * Letter grade:
  * A = 90 -> 100
@@ -17,14 +19,23 @@ function toLetterGrade(numGrade) {
 }
 
 /**
- * Task 2: Create a function that takes in an array and return a new array containing only even elements from the original array
+ * Task 2: Create a function that takes in an array of integers and returns a 
+ * new array containing only even elements from the original array (order 
+ * doesn't matter)
+ *
+ * Example: [9, 3, 2, 1, 2, 0] --> [2, 2, 0]
  */
 function getEvenElements(array) {
 
 }
 
 /**
- * Task 3: Create a function that takes in a string and return the LENGTH of the longest word in that string
+ * Task 3: Create a function that takes in a sentence and returns the LENGTH 
+ * of the longest word in that sentence. Don't worry about punctuation!
+ *
+ * Hint: The .split() method might be useful here
+ *
+ * Example: "I love Bits of Good" --> 4
  */
 function findLongestWord(string) {
 
@@ -32,6 +43,7 @@ function findLongestWord(string) {
 
 /**
  * Task 4: Create a function that takes in 2 objects and return an object that is the combination of the 2
+ *
  * Example:
     {
         name: "Casey",
@@ -54,11 +66,13 @@ function combineObjects(object1, object2) {
 }
 
 /**
- *  Task 5: Create a function that takes an array as an argument and returns the reverse array.
-    DO NOT USE THE Array.reverse() METHOD!!
-    Example: [1, 2, 3] -> [3, 2, 1]
+ *  Task 5: Create a function that takes an array as an argument and returns 
+ *  the reverse array.
+ *  
+ *  DO NOT USE THE .reverse() METHOD!!
+ * 
+ *  Example: [1, 2, 3] -> [3, 2, 1]
  */
-
 function reverseArr(array) {
 
 }

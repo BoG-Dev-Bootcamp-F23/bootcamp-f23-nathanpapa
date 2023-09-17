@@ -51,6 +51,7 @@ img {
     font-size: 1.25em;
     width: 20%;
     text-align: center;
+    border-radius: .25em;
 }
 
 #content {
@@ -70,6 +71,10 @@ img {
     width: 65%;
     height: 100%;
     padding: 0 0 0 2%;
+}
+
+#header .searchbar {
+    height: auto;
     margin: 1% 0;
 }
 
@@ -97,6 +102,7 @@ img {
 #footer {
     height: 10%;
     justify-content: center;
+    align-items: center;
     border-top: 2px black solid;
 }
 
@@ -114,10 +120,6 @@ img {
     align-items: center;
 }
 
-#resultsBar {
-    height: auto;
-}
-
 #results {
     display: flex;
     flex-direction: column;
@@ -131,37 +133,53 @@ img {
     display: flex;
     background-color: #520031;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 25%;
     height: 80%;
+    border-radius: .5em;
 }
 
 img[src="images/me.jpg"] {
     width: 80%;
+    height: auto;
     padding: 1%;
+    border-radius: 1em;
 }
 
 li p {
     margin: 1% 0;
     color: white;
     padding-left: 2%;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 li h3 {
     color: #0038FF;
-    margin: 0;
+    margin: 1% 0 0 0;
     font-weight: normal;
     padding-left: 2%;
+    font-size: 21px;
+}
+
+li h3:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 #results li {
     background-color: #D9D9D9;
+    border-radius: .5em;
 }
 
 #pictureBox p {
-    font-size: 12px;
-    padding: 1%;
+    font-size: 13px;
+    padding: 0 4%;
+    margin: 0;
     color: white;
+}
+
+a:hover, #searchButton:hover {
+    filter: brightness(85%);
+    cursor: pointer;
 }

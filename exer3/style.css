@@ -110,6 +110,7 @@ img {
     height: 10%;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-bottom: solid 2px black;
 }
 
@@ -182,4 +183,9 @@ li h3:hover {
 a:hover, #searchButton:hover {
     filter: brightness(85%);
     cursor: pointer;
+}
+
+#google {
+    position: absolute;
+    left: 1%;
 }

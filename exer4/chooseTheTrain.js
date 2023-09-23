@@ -36,7 +36,12 @@ const railArray = await getRealTimeRailCoordinates();
  * DO NOT MODIFY railArray! You'll need it for later
  */
 function getKeysToArr(arrivals) {
-  // TODO
+  	const first = railArray[0];
+  	let keys = [];
+	for (const key in first) {
+		keys.push(key);
+	}
+	return keys;
 }
 
 /**
@@ -52,8 +57,16 @@ function getKeysToArr(arrivals) {
  * DO NOT MODIFY railArray! You'll need it for later
  */
 function getTrainComingIn1Minute(arrivals) {
-  // TODO
+	let comingSoon = [];
+	arrivals.forEach((arrival) => {
+		if (arrival["WAITING_TIME"] === "1 min") {
+			comingSoon.push(arrival);
+		}
+	});
+	return comingSoon;
 }
+
+getTrainComingIn1Minute(railArray);
 
 /**
  * Task 3: Marta wants to change all Blue Rail Lines to be Pink Rail Lines
@@ -84,7 +97,15 @@ function getTrainComingIn1Minute(arrivals) {
  *
  */
 function updateLineColor(arrivals) {
-  // TODO
+	let blueFilter = arrivals.filter(arrival => arrival["LINE"] === "BLUE");
+	let deepCopy = [];
+	blueFilter.forEach((arrival) => {
+		deepCopy.push({...arrival});
+	});
+	deepCopy.map((arrival) => {
+		arrival["LINE"] = "PINK";
+	});
+	return deepCopy;
 }
 
 console.log(getKeysToArr(railArray));

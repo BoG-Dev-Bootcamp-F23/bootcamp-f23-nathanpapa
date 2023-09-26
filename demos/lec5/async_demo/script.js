@@ -31,4 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("There was a problem fetching the weather data:", error);
       weatherInfo.innerHTML = "Failed to fetch weather data.";
     });
+
+    let count = 0;
+
+    document.addEventListener("click", (event) => {
+      const button = document.getElementById("button");
+
+      if (event.target === button) {
+        // update count
+        count++;
+        const textElement = document.getElementById("button-info");
+        textElement.textContent = count;
+      }
+    })
 });

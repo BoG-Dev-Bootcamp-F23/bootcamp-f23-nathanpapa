@@ -3,6 +3,8 @@ import Station from './Station';
 
 export default function Navbar(props) {
     const [data, setData] = useState([]);
+    const [clicked, setClicked] = useState("");
+    const [stationsFilter, setStationsFilter] = useState("");
 
     const URL = "http://13.59.196.129:3001";
 
@@ -17,35 +19,30 @@ export default function Navbar(props) {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch(`${URL}/arrivals/${props.color}`);
+            const response = await fetch(`${URL}/stations/${props.color}`);
             const stationData = await response.json();
-            if (props.filter === "Arriving") {
-                setData(stationData.filter((train) => train["WAITING_TIME"] === "Arriving"));
-            } else if (props.filter === "Scheduled") {
-                setData(stationData.filter((train) => train["WAITING_TIME"] !== "Arriving"));
-            } else if (props.filter === "Northbound") {
-                setData(stationData.filter((train) => train["DIRECTION"] === "N"));
-            } else if (props.filter === "Southbound") {
-                setData(stationData.filter((train) => train["DIRECTION"] === "S"));
-            } else if (props.filter === "Eastbound") {
-                setData(stationData.filter((train) => train["DIRECTION"] === "E"));
-            } else if (props.filter === "Westbound") {
-                setData(stationData.filter((train) => train["DIRECTION"] === "W"));
-            } else {
+            if (stationsFilter === "") {
                 setData(stationData);
+            } else {
+                setData(stationData.filter((station) => station.toLowerCase().includes(stationsFilter.toLowerCase())));
             }
         }
         fetchData();
-    }, [props.filter]);
+        console.log(data);
+    }, [stationsFilter, props.color]);
 
     return (
         <div className="navbar">
-            <input type="text" placeholder="Select your starting station" class="navHeader"></input>
+            <input type="text"
+                onChange={(e) => {
+                    setStationsFilter(e.target.value);
+                }} placeholder="Select your starting station" class="navHeader">
+            </input>
             <div className="stations">
-                <Station station="All Stations" />
+                <Station station="All Stations" setFilter={props.setFilter} clicked={clicked} setClicked={setClicked} />
                 {
-                    props.data[props.color].map((station) => {
-                        return (<Station station={station} />);
+                    data.map((station) => {
+                        return (<Station station={station} setFilter={props.setFilter} clicked={clicked} setClicked={setClicked} />);
                     })
                 }
             </div>

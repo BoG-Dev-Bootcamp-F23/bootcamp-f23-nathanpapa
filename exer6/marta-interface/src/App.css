@@ -63,12 +63,13 @@
 
 .header {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	border-bottom: 2px solid lightgrey;
 	margin: 0;
-	height: 10%;
+	height: 15%;
 }
 
 h1 {
@@ -209,3 +210,15 @@ button:hover {
 	border: 0;
 }
 
+.colorButtonBox {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.colorButton {
+	width: 15%;
+	font-size: 16px;
+	border-radius: .5em;
+	border: solid 1px black;
+}

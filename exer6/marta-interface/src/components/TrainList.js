@@ -31,12 +31,14 @@ export default function TrainList(props) {
                 setData(trainData.filter((train) => train["DIRECTION"] === "E"));
             } else if (props.filter === "Westbound") {
                 setData(trainData.filter((train) => train["DIRECTION"] === "W"));
-            } else {
+            } else if (props.filter === "" || props.filter === "All Stations") {
                 setData(trainData);
+            } else if (props.filter !== "") {
+                setData(trainData.filter((train) => train["STATION"].includes(props.filter.toUpperCase())));
             }
         }
         fetchData();
-    }, [props.filter]);
+    }, [props.filter, props.color]);
 
     return (
         <div className="trainList">

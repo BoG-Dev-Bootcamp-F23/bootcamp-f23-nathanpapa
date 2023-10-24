@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 export default function Train(props) {
     const lineBox = {
         display: 'flex',
-        height: '100%',
         justifyContent: 'center',
         borderRadius: '.5em',
         width: '40%',

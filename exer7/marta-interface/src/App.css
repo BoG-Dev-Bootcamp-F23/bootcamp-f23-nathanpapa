@@ -238,6 +238,7 @@ button:hover {
 
 .aboutLink:hover {
 	cursor: pointer;
+	text-decoration: underline;
 	opacity: 85%;
 }
 
@@ -282,6 +283,7 @@ h2 {
 
 .homeLink {
 	width: 10%;
+	font-size: 18px;
 }
 
 .aboutContent {

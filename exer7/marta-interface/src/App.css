@@ -266,3 +266,35 @@ h2 {
 .homeHeader > p {
 	width: 10%;
 }
+
+.aboutHeader {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: solid 1px black;
+	padding: 0 2%;
+}
+
+.homeLink:hover {
+	cursor: pointer;
+	text-decoration: underline;
+	opacity: 85%;
+}
+
+.homeLink {
+	width: 10%;
+}
+
+.aboutContent {
+	display: flex;
+	justify-content: space-around;
+	height: 90%;
+	margin-top: 5%;
+}
+
+img[src="map.png"] {
+	height: 60%;
+}
+
+.aboutContent > p {
+	width: 40%;
+}

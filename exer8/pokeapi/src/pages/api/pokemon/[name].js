@@ -1,24 +1,24 @@
 export default function handler(req, res) {
     if (req.method === "GET") {
         const name = req.query.name;
-        console.log(name);
-        if (name === "") {
-            req.status(401).json({status: "ERROR: Must input a Pokemon's name."});
-        }
         async function fetchData() {
             try {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
             const data = await response.json();
-            await console.log(data);
             let types = [];
             data["types"].forEach((type)=> {
                 types.push(type["type"]["name"]);
             });
-            return res.status(200).json({"pokemonName": data["name"], "sprite": data["sprites"]["front_default"], "types": types});
+            const typeKey = (types.length === 1) ? "type" : "types";
+            const pokemonJSON = {"name": data["name"], "sprite": data["sprites"]["front_default"]};
+            pokemonJSON[typeKey] = types;
+            return res.status(200).json(pokemonJSON);
             } catch {
-                res.status(400).json({status: `ERROR: ${name} is not a Pokemon.`});
+                return res.status(400).json({status: `ERROR: ${name} is not a Pokemon.`});
             }
         }
         fetchData();
+    } else {
+        return res.status(401).json({status: `Cannot complete a request of this type.`});
     }
 }

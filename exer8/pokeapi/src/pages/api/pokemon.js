@@ -9,12 +9,17 @@ export default function handler(req, res) {
                 data["types"].forEach((type)=> {
                     types.push(type["type"]["name"]);
                 });
-                return res.status(200).json({"pokemonName": data["name"], "sprite": data["sprites"]["front_default"], "types": types});
+                const typeKey = (types.length === 1) ? "type" : "types";
+                const pokemonJSON = {"name": data["name"], "sprite": data["sprites"]["front_default"]};
+                pokemonJSON[typeKey] = types;
+                return res.status(200).json(pokemonJSON);
             }
             fetchData();
         }
         catch {
             return res.status(400).json({status: "ERROR"});
         }
+    } else {
+        return res.status(401).json({status: `Cannot complete a request of this type.`});
     }
 }

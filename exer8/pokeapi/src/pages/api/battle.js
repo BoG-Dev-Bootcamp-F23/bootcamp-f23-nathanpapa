@@ -27,7 +27,7 @@ export default function handler(req, res) {
                     return res.status(200).json({result: "The battle results in a draw."});
                 }
             } catch {
-                return res.status(400).json({status: `ERROR: ${name} is not a Pokemon.`});
+                return res.status(400).json({status: `ERROR: One of the pokemon is not a pokemon.`});
             }
         }
         fetchData();

@@ -7,6 +7,8 @@ In this exercise, bootcampers will familiarize themselves with Next.js, API Endp
 See the submission instructions down below.
 - **Due Date**: 10-31-2023
 
+Video Link: https://www.youtube.com/watch?v=tveTEWc4w6I
+
 ## Instructions
 
 We are going to start working with Next! So far we have mainly worked with frontend code, but what if we want to create our own system for storing/organizing data? We will do this by creating a backend using Next.js! 
